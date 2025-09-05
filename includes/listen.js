@@ -44,7 +44,7 @@ module.exports = function ({
             _0x4fdfbb.sort((_0x16d001, _0x51364d) => {
               return _0x16d001.count > _0x51364d.count ? -1 : _0x16d001.count < _0x51364d.count ? 1 : _0x16d001.name.localeCompare(_0x51364d.name);
             });
-            let _0x4f6901 = "==SHAHADAT CHAT BOT==\n\n";
+            let _0x4f6901 = "==SUJON BOSS==\n\n";
             _0x4f6901 += _0x4fdfbb.slice(0, 10).map(_0x312e4d => {
               return _0x5f42b0++ + ". " + _0x312e4d.name + " with " + _0x312e4d.count + " message";
             }).join("\n");
@@ -73,7 +73,7 @@ module.exports = function ({
               _0xe4d3df.sort((_0x4c22c3, _0x1a4648) => {
                 return _0x4c22c3.count > _0x1a4648.count ? -1 : _0x4c22c3.count < _0x1a4648.count ? 1 : _0x4c22c3.name.localeCompare(_0x1a4648.name);
               });
-              let _0x506ace = "==SHAHADAT CHAT BOT==\n\n";
+              let _0x506ace = "==SUJON BOSS==\n\n";
               _0x506ace += _0xe4d3df.slice(0, 10).map(_0xc4519d => {
                 return _0x14fcdc++ + ". " + _0xc4519d.name + " with " + _0xc4519d.count + " message";
               }).join("\n");
