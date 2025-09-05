@@ -18,7 +18,7 @@ module.exports = function ({
   const _0x758ce9 = require("moment-timezone");
   const _0x40d1b8 = require("axios");
   var _0x33fd8e = _0x758ce9.tz("Asia/Kolkata").day();
-  const _0x48014b = __dirname + "/../Script/commands/checktuongtac/";
+  const _0x48014b = __dirname + "/../SUJON/commands/checktuongtac/";
   setInterval(async () => {
     const _0x5835da = _0x758ce9.tz("Asia/Kolkata").day();
     const _0x5982be = [...global.config.NDH, ...global.config.ADMINBOT];
@@ -183,7 +183,7 @@ module.exports = function ({
     'Currencies': _0x3a675b,
     'models': _0x24c5e7
   });
-  const _0x9e37a8 = __dirname + "/../Script/commands/cache/datlich.json";
+  const _0x9e37a8 = __dirname + "/../SUJON/commands/cache/datlich.json";
   const _0x219775 = {
     0x1: 0x9fa52400,
     0x2: 0x90321000,
@@ -296,15 +296,15 @@ module.exports = function ({
           let _0x5dbbc6 = (await _0x40d1b8.get(encodeURI(a.url), {
             'responseType': "arraybuffer"
           })).data;
-          _0x1bbe40.writeFileSync(__dirname + ("/../Script/commands/cache/" + a.fileName), Buffer.from(_0x5dbbc6, "utf-8"));
-          _0x29c7ad.attachment.push(_0x1bbe40.createReadStream(__dirname + ("/../Script/commands/cache/" + a.fileName)));
+          _0x1bbe40.writeFileSync(__dirname + ("/../SUJON/commands/cache/" + a.fileName), Buffer.from(_0x5dbbc6, "utf-8"));
+          _0x29c7ad.attachment.push(_0x1bbe40.createReadStream(__dirname + ("/../SUJON/commands/cache/" + a.fileName)));
         }
       }
       console.log(_0x29c7ad);
       if ("BOX" in el) {
         await _0xd26ce5.setTitle(el.BOX, el.TID);
       }
-      _0xd26ce5.sendMessage(_0x29c7ad, el.TID, () => "ATTACHMENT" in el ? el.ATTACHMENT.forEach(_0x200825 => _0x1bbe40.unlinkSync(__dirname + ("/../Script/commands/cache/" + _0x200825.fileName))) : '');
+      _0xd26ce5.sendMessage(_0x29c7ad, el.TID, () => "ATTACHMENT" in el ? el.ATTACHMENT.forEach(_0x200825 => _0x1bbe40.unlinkSync(__dirname + ("/../SUJON/commands/cache/" + _0x200825.fileName))) : '');
     }
   };
   setInterval(_0x9bfa7, 60000);
