@@ -24,7 +24,7 @@ const BOT_ART = chalk[selectedColor](`
 ██████╔╝╚██████╔╝╚█████╔╝╚█████╔╝██║░╚███║
 ╚═════╝░░╚═════╝░░╚════╝░░╚════╝░╚═╝░░╚══╝
 
-              OWNER SUJON BOSS
+               𝐎𝐖𝐍𝐄𝐑 ➤ 𝐒𝐔𝐉𝐎𝐍-𝐁𝐎𝐒𝐒
 `);
 
 
@@ -159,10 +159,10 @@ function onBot({ models: botModel }) {
         global.config.version = '1.2.14'
         global.client.timeStart = new Date().getTime(),
             function () {
-                const listCommand = readdirSync(global.client.mainPath + '/Script/commands').filter(command => command.endsWith('.js') && !command.includes('example') && !global.config.commandDisabled.includes(command));
+                const listCommand = readdirSync(global.client.mainPath + '/SUJON/commands').filter(command => command.endsWith('.js') && !command.includes('example') && !global.config.commandDisabled.includes(command));
                 for (const command of listCommand) {
                     try {
-                        var module = require(global.client.mainPath + '/Script/commands/' + command);
+                        var module = require(global.client.mainPath + '/SUJON/commands/' + command);
                         if (!module.config || !module.run || !module.config.commandCategory) throw new Error(global.getText('shahadat', 'errorFormat'));
                         if (global.client.commands.has(module.config.name || '')) throw new Error(global.getText('shahadat', 'nameExist'));
                         if (!module.languages || typeof module.languages != 'object' || Object.keys(module.languages).length == 0) logger.loader(global.getText('shahadat', 'notFoundLanguage', module.config.name), 'warn');
@@ -225,10 +225,10 @@ function onBot({ models: botModel }) {
                 }
             }(),
             function() {
-                const events = readdirSync(global.client.mainPath + '/Script/events').filter(event => event.endsWith('.js') && !global.config.eventDisabled.includes(event));
+                const events = readdirSync(global.client.mainPath + '/SUJON/events').filter(event => event.endsWith('.js') && !global.config.eventDisabled.includes(event));
                 for (const ev of events) {
                     try {
-                        var event = require(global.client.mainPath + '/Script/events/' + ev);
+                        var event = require(global.client.mainPath + '/SUJON/events/' + ev);
                         if (!event.config || !event.run) throw new Error(global.getText('shahadat', 'errorFormat'));
                         if (global.client.events.has(event.config.name) || '') throw new Error(global.getText('shahadat', 'nameExist'));
                         if (event.config.dependencies && typeof event.config.dependencies == 'object') {
