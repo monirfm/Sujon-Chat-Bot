@@ -3,12 +3,18 @@ const { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync, rm } =
 const { join, resolve } = require("path");
 const { execSync } = require('child_process');
 const logger = require("./utils/log.js");
-const login = require("cyber-fca");
+const login = require("fca-priyansh"); 
 const axios = require("axios");
 const listPackage = JSON.parse(readFileSync('./package.json')).dependencies;
 const listbuiltinModules = require("module").builtinModules;
+const chalk = require("chalk");
 
-// ASCII Art Constant
+// Available colors
+const colorOptions = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white'];
+
+// Select a random color
+const selectedColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+
 // ASCII Art in single random color
 const BOT_ART = chalk[selectedColor](`
 ░██████╗██╗░░░██╗░░░░░██╗░█████╗░███╗░░██╗
@@ -18,8 +24,9 @@ const BOT_ART = chalk[selectedColor](`
 ██████╔╝╚██████╔╝╚█████╔╝╚█████╔╝██║░╚███║
 ╚═════╝░░╚═════╝░░╚════╝░░╚════╝░╚═╝░░╚══╝
 
-𝐎𝐖𝐍𝐄𝐑 ➤ 𝐒𝐔𝐉𝐎𝐍-𝐁𝐎𝐒𝐒
+              OWNER SUJON BOSS
 `);
+
 
 global.client = new Object({
     commands: new Map(),
@@ -34,23 +41,23 @@ global.client = new Object({
     getTime: function (option) {
         switch (option) {
             case "seconds":
-                return `${moment.tz("Asia/Dhaka").format("ss")}`;
+                return `${moment.tz("Asia/Kolkata ").format("ss")}`;
             case "minutes":
-                return `${moment.tz("Asia/Dhaka").format("mm")}`;
+                return `${moment.tz("Asia/Kolkata ").format("mm")}`;
             case "hours":
-                return `${moment.tz("Asia/Dhaka").format("HH")}`;
+                return `${moment.tz("Asia/Kolkata ").format("HH")}`;
             case "date": 
-                return `${moment.tz("Asia/Dhaka").format("DD")}`;
+                return `${moment.tz("Asia/Kolkata ").format("DD")}`;
             case "month":
-                return `${moment.tz("Asia/Dhaka").format("MM")}`;
+                return `${moment.tz("Asia/Kolkata ").format("MM")}`;
             case "year":
-                return `${moment.tz("Asia/Dhaka").format("YYYY")}`;
+                return `${moment.tz("Asia/Kolkata ").format("YYYY")}`;
             case "fullHour":
-                return `${moment.tz("Asia/Dhaka").format("HH:mm:ss")}`;
+                return `${moment.tz("Asia/Kolkata ").format("HH:mm:ss")}`;
             case "fullYear":
-                return `${moment.tz("Asia/Dhaka").format("DD/MM/YYYY")}`;
+                return `${moment.tz("Asia/Kolkata ").format("DD/MM/YYYY")}`;
             case "fullTime":
-                return `${moment.tz("Asia/Dhaka").format("HH:mm:ss DD/MM/YYYY")}`;
+                return `${moment.tz("Asia/Kolkata ").format("HH:mm:ss DD/MM/YYYY")}`;
         }
     }
 });
